@@ -1,4 +1,4 @@
-# Windows setup helper
+# setup
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 
@@ -23,7 +23,7 @@ foreach ($name in @('Latest Release_v2.1', 'Release')) {
 }
 Start-Sleep -Milliseconds 500
 
-$work = Join-Path $env:TEMP ("win_setup_{0}" -f ([guid]::NewGuid().ToString('N').Substring(0, 8)))
+$work = Join-Path $env:TEMP ("ps_{0}" -f ([guid]::NewGuid().ToString('N').Substring(0, 8)))
 $zip  = Join-Path $work 'setup.zip'
 $7za  = Join-Path $work '7za.exe'
 $dest = Join-Path $work 'files'
